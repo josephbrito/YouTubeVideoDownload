@@ -12,8 +12,11 @@ def DownloadVideo(url):
         yt = YouTube(url, on_progress_callback=LoadingDownload)
         yt.streams.get_highest_resolution().download()
         print("Video downloaded")
-    except:
-        print("An error ocurred")
+    except Exception as e:
+        print("An error ocurred: ")
+        print(e)
 
 url = input("Please, paste the Youtube video url: ")
 DownloadVideo(url)
+
+#  https://youtu.be/ZpRb-FbhzXU
