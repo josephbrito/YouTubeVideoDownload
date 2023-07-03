@@ -18,5 +18,3 @@ def DownloadVideo(url):
 
 url = input("Please, paste the Youtube video url: ")
 DownloadVideo(url)
-
-#  https://youtu.be/ZpRb-FbhzXU
