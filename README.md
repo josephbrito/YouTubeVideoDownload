@@ -1,5 +1,20 @@
 ## Download any video on YouTube by terminal
 
+## Dependencies:
+
+```python
+pip install pytube
+pip install os_sys
+```
+
+## To download songs use:
+
+```python
+python3 yt.py -s
+
+Please, paste the Youtube video url: your-url-video
+```
+
 ## Bug solved!
 
 ### For solve the error `get_throttling_function_name: could not find match for multiple` open `pytube > cipher.py` and in `get_throttling_function_name` function replace `function_patterns` by:
