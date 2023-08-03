@@ -20,7 +20,7 @@ def DownloadVideo():
             new_file = base + '.mp3'
             os.rename(out_file, new_file)
             return
-        else:
+        elif sys.argv[1] == "-v":
             yt.streams.get_highest_resolution().download()
             print("Video downloaded")
             return
