@@ -9,7 +9,7 @@ def LoadingDownload(stream, chunk, bytes):
     print(f"Status: {round(pct_completed, 2)} %")
 
 yt = YouTube(input("Please, paste the Youtube video url: "), on_progress_callback=LoadingDownload)
-    
+ 
 def DownloadVideo():
     try:
         if sys.argv[1] == "-s":
@@ -24,7 +24,6 @@ def DownloadVideo():
             yt.streams.get_highest_resolution().download()
             print("Video downloaded")
             return
-            
     except Exception as e:
         print("An error ocurred: ")
         print(e)
