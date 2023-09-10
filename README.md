@@ -15,22 +15,14 @@ python3 yt.py -s
 Please, paste the Youtube video url: your-url-video
 ```
 
+## To download videos use `-v` flag
+
 ## Bug solved!
 
 ### For solve the error `get_throttling_function_name: could not find match for multiple` open `pytube > cipher.py` and in `get_throttling_function_name` function replace `function_patterns` by:
 
 ```python
- function_patterns = [
-        # https://github.com/ytdl-org/youtube-dl/issues/29326#issuecomment-865985377
-        # https://github.com/yt-dlp/yt-dlp/commit/48416bc4a8f1d5ff07d5977659cb8ece7640dcd8
-        # var Bpa = [iha];
-        # ...
-        # a.C && (b = a.get("n")) && (b = Bpa[0](b), a.set("n", b),
-        # Bpa.length || iha("")) }};
-        # In the above case, `iha` is the relevant function name
-        r'a\.[a-zA-Z]\s*&&\s*\([a-z]\s*=\s*a\.get\("n"\)\)\s*&&.*?\|\|\s*([a-z]+)',
-        r'\([a-z]\s*=\s*([a-zA-Z0-9$]+)(\[\d+\])?\([a-z]\)',
-    ]
+     function_patterns = [r'a\.[a-zA-Z]\s*&&\s*\([a-z]\s*=\s*a\.get\("n"\)\)\s*&&\s*\([a-z]\s*=\s*([a-zA-Z0-9$]{2,3})(\[\d+\])?\([a-z]\)']
 ```
 
 ### Demonstration:
