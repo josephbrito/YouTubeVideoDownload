@@ -15,14 +15,26 @@ python3 yt.py -s
 Please, paste the Youtube video url: your-url-video
 ```
 
-## To download videos use `-v` flag
+## To download videos use:
 
-## Bug solved!
+```python
+python3 yt.py -v
+```
+
+## Solving some bugs
 
 ### For solve the error `get_throttling_function_name: could not find match for multiple` open `pytube > cipher.py` and in `get_throttling_function_name` function replace `function_patterns` by:
 
 ```python
      function_patterns = [r'a\.[a-zA-Z]\s*&&\s*\([a-z]\s*=\s*a\.get\("n"\)\)\s*&&\s*\([a-z]\s*=\s*([a-zA-Z0-9$]{2,3})(\[\d+\])?\([a-z]\)']
+```
+
+### Another common error's age restricted. For solve it open `pytube > innertube.py` and at line 223 change `ANDROID_MUSIC` to `ANDROID` as below:
+
+```python
+def __init__(self, client='ANDROID_MUSIC', use_oauth=False, allow_cache=True):
+
+def __init__(self, client='ANDROID', use_oauth=False, allow_cache=True):
 ```
 
 ### Demonstration:
