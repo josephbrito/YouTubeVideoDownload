@@ -7,6 +7,16 @@ pip install pytube
 pip install os_sys
 ```
 
+### 🚦 You need python3 installed! `I used Python 3.10.8 version`
+
+### Installation:
+
+`git clone https://github.com/josephbrito/YouTubeVideoDownload.git`
+
+`cd YouTubeVideoDownload`
+
+`python3 yt.py`
+
 ## To download songs use:
 
 ```python
@@ -47,13 +57,3 @@ chmod 544 /usr/local/bin/youtube
 ### Demonstration:
 
 ![GravaodeTela2024-03-21s10 28 48-ezgif com-video-to-gif-converter](https://github.com/josephbrito/YouTubeVideoDownload/assets/84200694/5122ea36-eeb3-4c51-9938-91d45e57895d)
-
-### 🚦 You need python3 installed! `I used Python 3.10.8 version`
-
-### Installation:
-
-`git clone https://github.com/josephbrito/YouTubeVideoDownload.git`
-
-`cd YouTubeVideoDownload`
-
-`python3 yt.py`
