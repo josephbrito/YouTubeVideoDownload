@@ -10,7 +10,7 @@ pip install os_sys
 ## To download songs use:
 
 ```python
-python3 yt.py -s
+python3 yt.py -s your_url
 
 Please, paste the Youtube video url: your-url-video
 ```
@@ -18,7 +18,7 @@ Please, paste the Youtube video url: your-url-video
 ## To download videos use:
 
 ```python
-python3 yt.py -v
+python3 yt.py -v your_url
 ```
 
 ## Solving some bugs
@@ -37,9 +37,16 @@ def __init__(self, client='ANDROID_MUSIC', use_oauth=False, allow_cache=True):
 def __init__(self, client='ANDROID', use_oauth=False, allow_cache=True):
 ```
 
+## Make it globally
+
+```shell
+cp yt.py /usr/local/bin/youtube
+chmod 544 /usr/local/bin/youtube
+```
+
 ### Demonstration:
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/84200694/207482693-bf3a7c8c-c7ce-4291-9bc3-cfc493c8c457.gif)
+![GravaodeTela2024-03-21s10 28 48-ezgif com-video-to-gif-converter](https://github.com/josephbrito/YouTubeVideoDownload/assets/84200694/5122ea36-eeb3-4c51-9938-91d45e57895d)
 
 ### 🚦 You need python3 installed! `I used Python 3.10.8 version`
 
