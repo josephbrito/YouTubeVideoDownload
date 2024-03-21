@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from pytube import YouTube
 import sys
 import os
@@ -8,21 +10,32 @@ def LoadingDownload(stream, chunk, bytes):
     pct_completed = bytes_downloaded / total_size * 100
     print(f"Status: {round(pct_completed, 2)} %")
 
-yt = YouTube(input("Please, paste the Youtube video url: "), on_progress_callback=LoadingDownload)
  
 def DownloadVideo():
+
+    if len(sys.argv) != 3:
+        print('Usage: python youtube.py [option] [url]')
+        return
+    midia_format = sys.argv[1]
+    url = sys.argv[2]
+    yt = YouTube(url, on_progress_callback=LoadingDownload)
+
     try:
-        if sys.argv[1] == "-s":
+        if midia_format == "-s":
             video = yt.streams.filter(only_audio=True).first()
-            destination = '.'
+            destination = os.path.join(os.getcwd(), 'youtube')
             out_file = video.download(output_path=destination)
             base, ext = os.path.splitext(out_file)
             new_file = base + '.mp3'
             os.rename(out_file, new_file)
             return
-        elif sys.argv[1] == "-v":
-            yt.streams.get_highest_resolution().download()
+        elif midia_format == "-v":
+            destination = os.path.join('/Users/josebrito', 'youtube')
+            yt.streams.get_highest_resolution().download(output_path=destination)
             print("Video downloaded")
+            return
+        else:
+            print('Usage: python youtube.py [option] [url]')
             return
     except Exception as e:
         print("An error ocurred: ")
