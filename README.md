@@ -1,27 +1,32 @@
 ## Download any video on YouTube by terminal
 
-## Dependencies:
+### Installation:
 
-```python
-pip install pytube
-pip install os_sys
+```bash
+git clone https://github.com/josephbrito/YouTubeVideoDownload.git
+
+cd YouTubeVideoDownload
+
+python3 -m venv .
+
+source bin/activate
+
+pip install -r requirements.txt
 ```
 
-## To download songs use:
+## To download videos use -v flag:
 
 ```python
-python3 yt.py -s
-
-Please, paste the Youtube video url: your-url-video
+python yt.py -v https://your-youtube-url
 ```
 
-## To download videos use:
+## To songs videos use -s flag:
 
 ```python
-python3 yt.py -v
+python yt.py -s https://your-youtube-url
 ```
 
-## Solving some bugs
+## Solving common bugs
 
 ### For solve the error `get_throttling_function_name: could not find match for multiple` open `pytube > cipher.py` and in `get_throttling_function_name` function replace `function_patterns` by:
 
@@ -40,7 +45,7 @@ python3 yt.py -v
     ]
 ```
 
-### Another common error's age restricted. For solve it open `pytube > innertube.py` and at line 223 change `ANDROID_MUSIC` to `ANDROID` as below:
+### Another error's age restricted. For solve it open `pytube > innertube.py` and at line 223 change `ANDROID_MUSIC` to `ANDROID` as below:
 
 ```python
 def __init__(self, client='ANDROID_MUSIC', use_oauth=False, allow_cache=True):
@@ -53,11 +58,3 @@ def __init__(self, client='ANDROID', use_oauth=False, allow_cache=True):
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/84200694/207482693-bf3a7c8c-c7ce-4291-9bc3-cfc493c8c457.gif)
 
 ### 🚦 You need python3 installed! `I used Python 3.10.8 version`
-
-### Installation:
-
-`git clone https://github.com/josephbrito/YouTubeVideoDownload.git`
-
-`cd YouTubeVideoDownload`
-
-`python3 yt.py`
