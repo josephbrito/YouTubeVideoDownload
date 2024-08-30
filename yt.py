@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!*python_path*
 
 from pytube import YouTube
 import sys
@@ -10,7 +10,7 @@ def LoadingDownload(stream, chunk, bytes):
     pct_completed = bytes_downloaded / total_size * 100
     print(f"Status: {round(pct_completed, 2)} %")
 
- 
+
 def DownloadVideo():
 
     if len(sys.argv) != 3:
@@ -23,7 +23,7 @@ def DownloadVideo():
     try:
         if midia_format == "-s":
             video = yt.streams.filter(only_audio=True).first()
-            destination = os.path.join(os.getcwd(), 'youtube')
+            destination = os.path.join('/Users/josebrito', 'youtube')
             out_file = video.download(output_path=destination)
             base, ext = os.path.splitext(out_file)
             new_file = base + '.mp3'
